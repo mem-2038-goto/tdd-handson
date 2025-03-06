@@ -1,4 +1,4 @@
-const sumStringNumbers = require('../src/sumStringNumbers');
+const sumStringNumbers = require("../src/sumStringNumbers");
 
 describe("sumStringNumbers 関数のテスト", () => {
   test("空文字の場合、0 を返す", () => {
@@ -18,11 +18,13 @@ describe("sumStringNumbers 関数のテスト", () => {
   });
 
   // 将来的に追加するケースとして、以下のようなテストも考えられる
-  // test("改行も区切り文字として扱う場合、合計を返す", () => {
-  //   expect(sumStringNumbers("1\n2,3")).toBe(6);
-  // });
+  test("改行も区切り文字として扱う場合、合計を返す", () => {
+    expect(sumStringNumbers("1\n2,3")).toBe(6);
+  });
 
-  // test("負の数字が入力された場合、エラーをスローする", () => {
-  //   expect(() => sumStringNumbers("1,-2,3")).toThrow("負の数字は許可されていません");
-  // });
+  test("負の数字が入力された場合、エラーをスローする", () => {
+    expect(() => sumStringNumbers("1,-2,3")).toThrow(
+      "負の数字は許可されていません"
+    );
+  });
 });
